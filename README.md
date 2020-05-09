@@ -2,10 +2,11 @@
 ## 基于pyecharts画k线分析图
    * 程序基于pyecharts二次集成，方便根据pd.Dataframe数据绘制k线，交易量，macd等信息
    * df中必须包含['open', 'close', 'low', 'high']
-   * 如果需要绘制交易量，df中需要‘volume’
-   * 如果需要绘制macd，df中需要 'macd','dif','dea'
+   * 如果需要绘制交易量，df中需要[‘volume’]
+   * 如果需要绘制macd，df中需要 ['macd','dif','dea']
+   * 自定义显示区值，如cci，如果df中有_cci_flag(_name_flag)列，会在相应显示数据位置显示标记
 ## 样例
-![image](https://github.com/luckfu/drawk/blob/master/df.png)
+![image](https://github.com/luckfu/drawk/raw/master/df.png)
 
 ```
 from drawk import KChartData
@@ -16,5 +17,5 @@ chart=data.plot(area=['V','cci'],
 chart.load_javascript()
 chart.render_notebook()
 ```
-![image](https://github.com/luckfu/drawk/blob/master/drawk.gif)
+![image](https://github.com/luckfu/drawk/raw/master/drawk.gif)
 
