@@ -4,6 +4,8 @@
    * df中必须包含['open', 'close', 'low', 'high']
    * 如果需要绘制交易量，df中需要‘volume’
 ## 样例
+![df](https://github.com/luckfu/drawk/raw/master/df.png)
+
 ```
 from drawk import KChartData
 data=KChartData(code,df,precision=2)
