@@ -4,7 +4,7 @@
    * df中必须包含['open', 'close', 'low', 'high']
    * 如果需要绘制交易量，df中需要‘volume’
 ## 样例
-![df](https://github.com/luckfu/drawk/raw/master/df.png)
+![image](https://github.com/luckfu/drawk/blob/master/df.png)
 
 ```
 from drawk import KChartData
@@ -15,4 +15,5 @@ chart=data.plot(area=['V','cci'],
 chart.load_javascript()
 chart.render_notebook()
 ```
+![image](https://github.com/luckfu/drawk/blob/master/drawk.gif)
 
