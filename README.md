@@ -3,6 +3,7 @@
    * 程序基于pyecharts二次集成，方便根据pd.Dataframe数据绘制k线，交易量，macd等信息
    * df中必须包含['open', 'close', 'low', 'high']
    * 如果需要绘制交易量，df中需要‘volume’
+   * 如果需要绘制macd，df中需要 'macd','dif','dea'
 ## 样例
 ![image](https://github.com/luckfu/drawk/blob/master/df.png)
 
