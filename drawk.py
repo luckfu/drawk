@@ -1,7 +1,7 @@
 from pyecharts.charts import Kline,Scatter,Line,Grid,Bar,EffectScatter
 from pyecharts import options as opts
 from pyecharts.render import make_snapshot
-#from pyecharts.globals import SymbolType,ThemeType
+from pyecharts.globals import SymbolType #,ThemeType
 from pyecharts.commons.utils import JsCode
 from pyecharts.globals import CurrentConfig, NotebookType
 CurrentConfig.NOTEBOOK_TYPE = NotebookType.JUPYTER_LAB
@@ -341,14 +341,19 @@ class KChartData:
                 #grid.add(macd,grid_opts=opts.GridOpts(pos_top= str(iButton)+'%',height=str(iStep)+'%'))
             else:
                 window = Line().add_xaxis(self.dateindex)
-                window.add_yaxis(series_name=w, 
-                        y_axis=round(self.data[w],self.precision).values.tolist(),
-                        is_smooth=True,
-                        is_symbol_show=False,
-                        is_hover_animation=False,
-                        label_opts=opts.LabelOpts(is_show=False),
-                        linestyle_opts= opts.LineStyleOpts(type_='solid',width=2)
-                      )
+                if isinstance(w, list):
+                    ws=w
+                else:
+                    ws=[w]
+                for wi in ws:
+                    window.add_yaxis(series_name=wi, 
+                            y_axis=round(self.data[w],self.precision).values.tolist(),
+                            is_smooth=True,
+                            is_symbol_show=False,
+                            is_hover_animation=False,
+                            label_opts=opts.LabelOpts(is_show=False),
+                            linestyle_opts= opts.LineStyleOpts(type_='solid',width=2)
+                          )
                 window.axislabel_opts=opts.LabelOpts(is_show=True),
                 window.set_global_opts(datazoom_opts=[opts.DataZoomOpts()],
                             xaxis_opts=opts.AxisOpts(
