@@ -1,6 +1,8 @@
 # drawk
-## 基于pyecharts画k线分析图
-   * 程序基于pyecharts二次集成，方便根据pd.Dataframe数据绘制k线(OHLC)，交易量，macd等信息
+    drawk是为在notebook等实验环境下方便观察股票数据的基于pyecharts的封装，方便根据pd.Dataframe数据绘制k线(OHLC)，交易量，macd或自定义数据。
+    该模块不建议用于web展示，如用于网站项目，建议使用其它功能更完整的产品。
+
+## 基于pyecharts画k线分析图 
    * df中必须包含['open', 'close', 'low', 'high']
    * 如果需要绘制交易量，df中需要[‘volume’]
    * 如果需要绘制macd，df中需要 ['macd','dif','dea']
