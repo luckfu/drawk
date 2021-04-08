@@ -25,3 +25,8 @@ chart.render_notebook()
 ```
 ![image](https://github.com/luckfu/drawk/raw/master/drawk.gif)
 
+## 增加通过mplfinance 方式绘制k线图，无法交互，但是速度快
+```
+mpf_plot(dft.tail(300));
+```
+![image](https://github.com/luckfu/drawk/raw/master/mpf_plot.png)
