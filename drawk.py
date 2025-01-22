@@ -1,6 +1,4 @@
 from pyecharts.globals import CurrentConfig, NotebookType,OnlineHostType
-CurrentConfig.NOTEBOOK_TYPE = NotebookType.JUPYTER_LAB
-#CurrentConfig.ONLINE_HOST = '/opt/luckfu/pyecharts-assets/assets' #'https://echarts.apache.org/examples/vendors/echarts/' #OnlineHostType.NOTEBOOK_HOST
 from pyecharts.charts import Kline,Scatter,Line,Grid,Bar,EffectScatter
 from pyecharts import options as opts
 from pyecharts.render import make_snapshot
